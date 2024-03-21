@@ -1,2 +1,1 @@
-# streamlit-example
-simple multipage streamlit example
+multipage streamlit
