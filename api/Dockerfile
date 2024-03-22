@@ -1,14 +1,14 @@
 FROM tiangolo/uvicorn-gunicorn:python3.9
 
-RUN mkdir /fastapi
+RUN mkdir /api
 
-COPY requirements.txt /fastapi
+COPY requirements.txt /api
 
-WORKDIR /fastapi
+WORKDIR /api
 
 RUN pip install -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
 
-COPY . /fastapi
+COPY . /api
 
 EXPOSE 8000
 

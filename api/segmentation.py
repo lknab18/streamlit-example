@@ -1,14 +1,18 @@
 import io
+import os
+
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
 import torch
 from PIL import Image
 from torchvision import transforms
+#from resnet import ResNet101_Weights
 
 # adapted from https://pytorch.org/hub/pytorch_vision_deeplabv3_resnet101/
 
 
 def get_segmentator():
-
+    #ResNet101_Weights.IMAGENET1K_V1
     model = torch.hub.load(
         "pytorch/vision:v0.6.0", "deeplabv3_resnet101", pretrained=True
     )

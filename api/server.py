@@ -22,3 +22,7 @@ def get_segmentation_map(file: bytes = File(...)):
     bytes_io = io.BytesIO()
     segmented_image.save(bytes_io, format="PNG")
     return Response(bytes_io.getvalue(), media_type="image/png")
+
+@app.get("/get")
+def get():
+    return Response('hello', status_code=200)
