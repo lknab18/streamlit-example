@@ -33,10 +33,8 @@ hist_values = np.histogram(
     data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
 
 st.bar_chart(hist_values)
-st.text(data.shape[0])
 
 hour_to_filter = st.slider('start', 0, 23, 0)
 filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
 st.subheader(f'Map of all pickups at {hour_to_filter}:00')
 st.map(filtered_data)
-st.text(filtered_data.shape[0])
