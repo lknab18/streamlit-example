@@ -6,9 +6,9 @@ def authenticated_menu():
     demo = st.session_state.demo
     match demo:
         case "demo1":
-            st.sidebar.page_link("pages/image-segmentation.py", label="Demo 1")
+            st.sidebar.page_link("pages/image-segmentation.py", label="Demo 1: Image Segmentation")
         case "demo2":
-            st.sidebar.page_link("pages/uber-data.py", label="Demo 2")
+            st.sidebar.page_link("pages/uber-data.py", label="Demo 2: Uber Data")
 
 
 def unauthenticated_menu():
