@@ -1,7 +1,7 @@
 import sys
 from fastapi.testclient import TestClient
 
-from api.server import app
+from segmentation.api import app
 
 client = TestClient(app)
 
@@ -15,11 +15,8 @@ def test_get():
 def test_get_segmentation_map():
     f = open('image.jpg','wb')
 
-    filename="../photos/dog1.jpg"
-    response = client.post("/segmentation", files={"file": ("filename", open(filename, "rb"), "image/jpg")})
+    filename="../../photos/dog1.jpg"
+    response = client.post("/predict", files={"file": ("filename", open(filename, "rb"), "image/jpg")})
 
     f.write(response.content)
     f.close()
-
-
-

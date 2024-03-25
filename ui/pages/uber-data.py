@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+from menu import menu_with_redirect
+menu_with_redirect()
+
 st.title('Uber pickups in NYC')
 
 DATE_COLUMN = 'date/time'

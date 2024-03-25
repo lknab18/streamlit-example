@@ -1,9 +1,11 @@
 import io
-
-from segmentation import get_segmentator, get_segments
+import sys
 from starlette.responses import Response
 
 from fastapi import FastAPI, File
+
+#sys.path.insert(0, 'C:\\Users\lknab\python-files\streamlit-example')
+from helper import get_segmentator, get_segments
 
 model = get_segmentator()
 
@@ -15,8 +17,8 @@ app = FastAPI(
 )
 
 
-@app.post("/segmentation")
-def get_segmentation_map(file: bytes = File(...)):
+@app.post("/predict")
+def predict(file: bytes = File(...)):
     """Get segmentation maps from image file"""
     segmented_image = get_segments(model, file)
     bytes_io = io.BytesIO()
