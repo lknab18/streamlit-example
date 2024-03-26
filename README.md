@@ -1,1 +1,1 @@
-multipage streamlit
+multipage streamlit with hidden menu
